@@ -1,0 +1,24 @@
+<section class="radio-console">
+    <div class="glass-player">
+        <div class="live-indicator">
+            <span class="pulse-red"></span>
+            <span class="live-text">AIRS DE SALUD - EN VIVO</span>
+        </div>
+        
+        <div class="station-meta">
+            <h2 class="station-name">FM MURAL <span class="freq">91.1</span></h2>
+            <p class="program-title">La voz de la Facultad de Medicina</p>
+        </div>
+
+        <div class="audio-interface">
+            <audio controls class="custom-audio">
+                <source src="https://01.solumedia.com.ar:8142/;" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
+        
+        <div class="wave-visualizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+    </div>
+</section>
