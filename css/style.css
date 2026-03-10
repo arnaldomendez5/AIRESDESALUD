@@ -16,19 +16,66 @@ body {
 
 /* Navegación */
 .navbar {
-    background: rgba(10, 12, 16, 0.9);
-    padding: 10px 5%;
+    background: rgba(10, 12, 16, 0.95); /* Fondo oscuro un poco más sólido */
+    padding: 15px 5%; /* Un poco más de espacio arriba y abajo */
     display: flex;
-    justify-content: center;
-    border-bottom: 1px solid var(--azul-logo);
+    justify-content: center; /* Centra el contenedor principal */
+    border-bottom: 2px solid var(--azul-logo); /* Borde un poco más grueso */
     backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1100px; }
-.logo { height: 60px; border-radius: 50%; border: 2px solid var(--celeste); }
-.station { color: var(--celeste); font-weight: bold; }
-.btn-ig { text-decoration: none; color: var(--bg); background: var(--celeste); padding: 5px 15px; border-radius: 4px; font-weight: bold; }
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; /* Uno a la izquierda, otro a la derecha */
+    align-items: center; 
+    width: 100%; 
+    max-width: 1100px; /* Ancho máximo para que no se separen tanto en pantallas gigantes */
+}
 
+/* LA CLAVE: Darle el mismo estilo a AMBOS logos */
+.nav-logo {
+    height: 70px; /* Ajusta este número si quieres que sean más grandes o chicos */
+    width: 70px;  /* Debe ser igual al height para ser un círculo perfecto */
+    object-fit: cover; /* Evita que la imagen se estire feo */
+    border-radius: 50%; /* Los hace circulares */
+    border: 3px solid var(--celeste); /* Anillo de color celeste */
+    box-shadow: 0 0 15px rgba(113, 215, 226, 0.4); /* Brillo suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white; /* Para que el logo blanco se note bien */
+}
+
+/* Efecto al pasar el mouse por cualquiera de los logos */
+.brand-link:hover .nav-logo,
+.station-link:hover .nav-logo {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--celeste);
+}
+.nav-center-text {
+    color: var(--celeste);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; /* Bien negrita para que tenga presencia */
+    font-size: 1.4rem;
+    letter-spacing: 4px; /* Espaciado elegante entre letras */
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(113, 215, 226, 0.3); /* Un brillo muy sutil */
+    text-align: center;
+    flex: 1; /* Esto ayuda a que ocupe el espacio central */
+}
+
+/* Ajuste para que en celulares no se rompa el diseño */
+@media (max-width: 768px) {
+    .nav-center-text {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    .nav-logo {
+        height: 50px;
+        width: 50px;
+    }
+}
 /* Hero */
 .hero { text-align: center; padding: 60px 20px; background: radial-gradient(circle at center, #1a2333, var(--bg)); }
 .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; margin: 10px 0; }
